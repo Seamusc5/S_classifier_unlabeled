@@ -1,0 +1,15 @@
+# Generated dataset (10,000 images)
+Research/
+s_images/
+anti_s_images/
+
+# Saved model weights & calibration flags
+*.keras
+*.pth
+*.h5
+*.npy
+
+# Python cache
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
