@@ -13,7 +13,7 @@ Purely unsupervised training based solely on rotation invariance and mirror diff
 2. Siamese Anti-Symmetric Network (`model.py`):**
    *`HorizontalMirror`:** Duplicates every input image $x$ with its horizontal reflection $\text{flip}(x)$ inside the forward pass.
    * Shared Convolutional Backbone:** Extracts scalar scores $s(x)$ and $s(\text{flip}(x))$ using shared weights.
-   *`ReflectionDifference`:** Computes the logit $z(x) = s(x) - s(\text{flip}(x))$ before applying a `sigmoid` activation, for complementary probabilities ($p(\text{flip}(x)) = 1 - p(x)$) by construction.
+   *`ReflectionDifference`:** Computes the logit $z(x) = s(x) - s(\text{flip}(x))$ before applying a `sigmoid` activation, for complementary probabilities $(p(\text{flip}(x)) = 1 - p(x))$ by construction.
 3. Training (`train.py`):
    * Optimized with Binary Cross-Entropy (`binary_crossentropy`) and `Adam` (`lr=3e-3`), pushing mirrored pairs toward opposite ends of the $[0, 1]$ probability spectrum.
 
